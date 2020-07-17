@@ -81,9 +81,9 @@ public class Resource extends RESTService {
 
   @Api
   @SwaggerDefinition(
-      info = @Info(title = "121", version = "$Metadata_Version$",
-          description = "$Metadata_Description$",
-          termsOfService = "$Metadata_Terms$",
+      info = @Info(title = "121", version = "1.0.0",
+          description = "Test description",
+          termsOfService = "",
           contact = @Contact(name = "Philipp", email = "CAEAddress@gmail.com") ,
           license = @License(name = "BSD",
               url = "https://github.com/PhilCAEOrg/microservice-121/blob/master/LICENSE.txt") ) )
@@ -99,7 +99,7 @@ public class Resource extends RESTService {
    * 
    *
    * 
-   * @return Response 
+   * @return Response Test response node
    * 
    */
   @GET
@@ -107,7 +107,7 @@ public class Resource extends RESTService {
   @Produces(MediaType.APPLICATION_JSON)
   @Consumes(MediaType.TEXT_PLAIN)
   @ApiResponses(value = {
-       @ApiResponse(code = HttpURLConnection.HTTP_OK, message = "nameOfResponse")
+       @ApiResponse(code = HttpURLConnection.HTTP_OK, message = "Test response node")
   })
   @ApiOperation(value = "getTodos", notes = " ")
   public Response getTodos() {
@@ -126,7 +126,7 @@ public class Resource extends RESTService {
     // nameOfResponse
     boolean nameOfResponse_condition = true;
     if(nameOfResponse_condition) {
-      JSONObject resultName = new JSONObject();
+      JSONObject resultName = new classes().new Todo().toJSON();
 
       
 
